@@ -1,0 +1,288 @@
+type: collection.insomnia.rest/5.0
+name: Prototype 1
+meta:
+  id: wrk_6069d32c2cfa4da4a974ecfcf3b34586
+  created: 1746980025550
+  modified: 1746980025550
+collection:
+  - url: http://localhost:8080/graphql
+    name: hello
+    meta:
+      id: req_eb9886a6e70444e88dad876322070067
+      created: 1746980067123
+      modified: 1747007341655
+      isPrivate: false
+      sortKey: -1746980067123
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"query {\n  holaMundo\n}"}'
+    headers:
+      - name: User-Agent
+        value: insomnia/11.1.0
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/graphql
+    name: profesores
+    meta:
+      id: req_6b910372cdf947c997b0124dfc2bbf9f
+      created: 1747007322800
+      modified: 1747007348392
+      isPrivate: false
+      sortKey: -1746980067073
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"query {\n  profesores
+        {\n    id\n    nombre\n    documento\n    area\n  }\n}"}'
+    headers:
+      - name: User-Agent
+        value: insomnia/11.1.0
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/graphql
+    name: crear profesores
+    meta:
+      id: req_7076d6ac1cb94cb58e38cf36ff8342ab
+      created: 1747007387209
+      modified: 1747012175368
+      isPrivate: false
+      sortKey: -1746980067023
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation {\n  crearProfesor(\n    nombre: \"Ana
+        Mendoza\",\n    documento: \"102233445\",\n    area:
+        \"Informática\"\n  ) {\n    id\n    nombre\n    area\n  }\n}"}'
+    headers:
+      - name: User-Agent
+        value: insomnia/11.1.0
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/graphql
+    name: actualizar profesores
+    meta:
+      id: req_1f28d53d96804e81828b922186803411
+      created: 1747007714406
+      modified: 1747012124154
+      isPrivate: false
+      sortKey: -1746980066973
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation {\n  actualizarProfesor(\n    id:
+        \"6821382241541063a7c5abce\", \n    nombre: \"Nombre
+        modificado\",\n    area: \"Nueva Área\"\n  )
+        {\n    id\n    nombre\n    area\n    documento  \n  }\n}"}'
+    headers:
+      - name: User-Agent
+        value: insomnia/11.1.0
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/graphql
+    name: crear asignatura
+    meta:
+      id: req_9f184221e6d9443bad468846d1404227
+      created: 1747013906239
+      modified: 1747013914602
+      isPrivate: false
+      sortKey: -1746980066923
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation {\n  crearAsignatura(nombre: \"Historia del Arte\")
+        {\n    id\n    nombre\n    profesorIds\n  }\n}\n"}'
+    headers:
+      - name: User-Agent
+        value: insomnia/11.1.0
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/graphql
+    name: asignatura
+    meta:
+      id: req_d4c7498ae97d4266bb5f57a746fb5007
+      created: 1747013937625
+      modified: 1747013952147
+      isPrivate: false
+      sortKey: -1746980066873
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"query {\n  asignaturas
+        {\n    id\n    nombre\n    profesorIds\n  }\n}\n"}'
+    headers:
+      - name: User-Agent
+        value: insomnia/11.1.0
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/graphql
+    name: Registrar una calificación
+    meta:
+      id: req_617c6d0b1ed6436985954e5546c23234
+      created: 1747016754390
+      modified: 1747017077180
+      isPrivate: false
+      sortKey: -1746980066823
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation {\n  registrarCalificacion(\n    estudianteId:
+        \"est-103\",\n    asignaturaId:
+        \"6821511f28e0f905850e9589\",\n    cursoId: \"11-A\",\n    periodo:
+        \"2025-2\",\n    nota: 4.7,\n    observaciones: \"Buen desempeño\"\n  )
+        {\n    id\n    estudianteId\n    asignaturaId\n    nota\n    observaciones\n  }\n}"}'
+    headers:
+      - name: User-Agent
+        value: insomnia/11.1.0
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/graphql
+    name: Actualizar nota
+    meta:
+      id: req_af528453058d419ebe58a634a8f65096
+      created: 1747016868219
+      modified: 1747016999084
+      isPrivate: false
+      sortKey: -1746980066773
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"\n# 2) Actualizar nota\nmutation
+        {\n  actualizarCalificacion(\n    id:
+        \"68215d1cad2147413cbb7399\",\n    nota: 4.8\n  )
+        {\n    id\n    nota\n    observaciones\n  }\n}"}'
+    headers:
+      - name: User-Agent
+        value: insomnia/11.1.0
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/graphql
+    name: Eliminar una calificación
+    meta:
+      id: req_6f43386f2c264df2b8c4ba8f3d0576ea
+      created: 1747016920944
+      modified: 1747016981515
+      isPrivate: false
+      sortKey: -1746980066723
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"\n# 3) Eliminar\nmutation {\n  eliminarCalificacion(id:
+        \"68215d0aad2147413cbb7398\")\n}"}'
+    headers:
+      - name: User-Agent
+        value: insomnia/11.1.0
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/graphql
+    name: calificaciones
+    meta:
+      id: req_0c0b95f15a5f48069df94e4adfed71b4
+      created: 1747017014189
+      modified: 1747017092274
+      isPrivate: false
+      sortKey: -1746980066673
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"# 4) Listar todas (o con filtro)\nquery
+        {\n  calificaciones(periodo:\"2025-1\") {\n    id estudianteId
+        asignaturaId cursoId periodo nota observaciones\n  }\n}"}'
+    headers:
+      - name: User-Agent
+        value: insomnia/11.1.0
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_e937f00634495ccd3a97b6f326e8e2a6c328491f
+    created: 1746980025554
+    modified: 1746980025554
+environments:
+  name: Base Environment
+  meta:
+    id: env_e937f00634495ccd3a97b6f326e8e2a6c328491f
+    created: 1746980025552
+    modified: 1746980025552
+    isPrivate: false
