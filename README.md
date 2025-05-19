@@ -215,3 +215,6 @@ Este microservicio implementa la gestión de **Profesores**, **Asignaturas** y *
 
    * Abre GraphiQL en: `http://localhost:8080/graphiql`
    * Ejecuta consultas y mutaciones según las funcionalidades descritas.
+
+---
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Swarch2F/component-2)
