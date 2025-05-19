@@ -16,17 +16,17 @@ public class CorsConfig {
             public void addCorsMappings(@NonNull CorsRegistry registry) {
                 // Configuración para el endpoint principal de GraphQL
                 registry.addMapping("/graphql")
-                        .allowedOrigins("*") // Cambia esto por tu dominio frontend
-                        .allowedMethods("POST", "OPTIONS")
+                        .allowedOrigins("http://localhost:3000") // Cambia esto por tu dominio frontend
+                        .allowedMethods("POST", "OPTIONS", "GET", "PUT", "DELETE")
                         .allowedHeaders("*")
-                        .allowCredentials(false);
+                        .allowCredentials(true);
 
                 // Configuración para la interfaz de desarrollo GraphiQL
                 registry.addMapping("/graphiql/**")
                         .allowedOrigins("*") // Permite acceso local para desarrollo
                         .allowedMethods("GET", "POST", "OPTIONS")
                         .allowedHeaders("*")
-                        .allowCredentials(false);
+                        .allowCredentials(true);
             }
         };
     }
